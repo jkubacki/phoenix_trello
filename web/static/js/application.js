@@ -1,3 +1,12 @@
-// for phoenix_html support, including form and button helpers
-// copy the following scripts into your javascript bundle:
-// * https://raw.githubusercontent.com/phoenixframework/phoenix_html/v2.3.0/priv/static/phoenix_html.js
+import React                    from 'react';
+import ReactDOM                 from 'react-dom';
+import { browserHistory }       from 'react-router';
+import configureStore           from './store';
+import Root                     from './containers/root';
+
+const store  = configureStore(browserHistory);
+
+const target = document.getElementById('main_container');
+const node = <Root routerHistory={browserHistory} store={store}/>;
+
+ReactDOM.render(node, target);
