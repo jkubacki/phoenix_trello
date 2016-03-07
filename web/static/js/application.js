@@ -2,7 +2,7 @@ import React                    from 'react';
 import ReactDOM                 from 'react-dom';
 import { browserHistory }       from 'react-router';
 import configureStore           from './store';
-import Root                     from './containers/root';
+import Root                     from './containers/root.jsx';
 
 const store  = configureStore(browserHistory);
 
