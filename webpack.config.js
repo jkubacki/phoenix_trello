@@ -22,7 +22,7 @@ var config = module.exports = {
   },
 
   resolve: {
-    extesions: ['', '.js', '.sass'],
+    extesions: ['', '.js', '.sass', '.jsx'],
     modulesDirectories: ['node_modules'],
   },
 
@@ -30,7 +30,7 @@ var config = module.exports = {
     noParse: /vendor\/phoenix/,
     loaders: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: 'babel',
         query: {
