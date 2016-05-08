@@ -1,7 +1,9 @@
 import React from 'react';
 
-class SessionsNew extends React.Component {
+export default class SessionsNew extends React.Component {
   render() {
-   //...
+    return (
+      <div>SessionsNew</div>
+    )
   }
 }

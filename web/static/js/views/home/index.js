@@ -1,7 +1,9 @@
 import React from 'react';
 
-class HomeIndexView extends React.Component {
+export default class HomeIndexView extends React.Component {
   render() {
-   //...
+    return (
+      <div>HomeIndexView</div>
+    )
   }
 }

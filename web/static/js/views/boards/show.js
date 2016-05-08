@@ -1,7 +1,10 @@
 import React from 'react';
 
-class BoardsShowView extends React.Component {
+export default class BoardsShowView extends React.Component {
   render() {
-   //...
+    return (
+      <div>BoardsShowView</div>
+    )
   }
 }
+
