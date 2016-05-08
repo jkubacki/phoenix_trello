@@ -7,16 +7,18 @@ import RegistrationsNew             from '../views/registrations/new';
 import SessionsNew                  from '../views/sessions/new';
 import BoardsShowView               from '../views/boards/show';
 
-export default (
-  <Route component={MainLayout}>
-    <Route path="/sign_up" component={RegistrationsNew} />
-    <Route path="/sign_in" component={SessionsNew} />
+export default function configRoutes(store) {
+  return (
+    <Route component={MainLayout}>
+      <Route path="/sign_up" component={RegistrationsNew} />
+      <Route path="/sign_in" component={SessionsNew} />
 
+      <Route path="/" component={AuthenticatedContainer}>
+        <IndexRoute component={HomeIndexView} />
 
-    <Route path="/" component={AuthenticatedContainer}>
-      <IndexRoute component={HomeIndexView} />
-
-      <Route path="/boards/:id" component={BoardsShowView} />
+        <Route path="/boards/:id" component={BoardsShowView}>
+        </Route>
+      </Route>
     </Route>
-  </Route>
-);
+  );
+}
