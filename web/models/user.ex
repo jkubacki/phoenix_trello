@@ -1,19 +1,22 @@
 defmodule PhoenixTrello.User do
   use PhoenixTrello.Web, :model
 
+  alias PhoenixTrello.{Board, UserBoard}
+
+  @derive {Poison.Encoder, only: [:id, :first_name, :last_name, :email]}
+
   schema "users" do
     field :first_name, :string
     field :last_name, :string
     field :email, :string
     field :encrypted_password, :string
+    field :password, :string, virtual: true
 
     timestamps
   end
 
-  @required_fields ~w(first_name last_name email)
+  @required_fields ~w(first_name last_name email password)
   @optional_fields ~w(encrypted_password)
-
-  @derive {Poison.Encoder, only: [:id, :first_name, :last_name, :email]}
 
   @doc """
   Creates a changeset based on the `model` and `params`.
