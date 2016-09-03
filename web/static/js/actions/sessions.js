@@ -3,10 +3,32 @@ import Constants                          from '../constants';
 import { Socket }                         from 'phoenix';
 import { httpGet, httpPost, httpDelete }  from '../utils';
 
-function setCurrentUser(dispatch, user) {
-  dispatch({
-    type: Constants.CURRENT_USER,
-    currentUser: user,
+export function setCurrentUser(dispatch, user) {
+  const socket = new Socket('/socket', {
+    params: { token: localStorage.getItem('phoenixAuthToken') },
+    logger: (kind, msg, data) => { console.log(`${kind}: ${msg}`, data); },
+  });
+
+  socket.connect();
+
+  const channel = socket.channel(`users:${user.id}`);
+
+  if (channel.state != 'joined') {
+    channel.join().receive('ok', () => {
+      dispatch({
+        type: Constants.CURRENT_USER,
+        currentUser: user,
+        socket: socket,
+        channel: channel,
+      });
+    });
+  }
+
+  channel.on('topics:add', (msg) => {
+    dispatch({
+        type: Constants.TOPIC_ADDED,
+        board: msg.board,
+      });
   });
 };
 
