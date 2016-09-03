@@ -8,8 +8,6 @@ function setCurrentUser(dispatch, user) {
     type: Constants.CURRENT_USER,
     currentUser: user,
   });
-
-  // ...
 };
 
 const Actions = {
@@ -53,7 +51,26 @@ const Actions = {
         dispatch(push('/sign_in'));
       });
     };
-  }
+  },
+
+
+  signOut: () => {
+    return dispatch => {
+      httpDelete('/api/v1/sessions')
+      .then((data) => {
+        localStorage.removeItem('phoenixAuthToken');
+
+        dispatch({ type: Constants.USER_SIGNED_OUT, });
+
+        dispatch(push('/sign_in'));
+
+        dispatch({ type: Constants.BOARDS_FULL_RESET });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    };
+  },
 };
 
 export default Actions;
