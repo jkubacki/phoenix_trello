@@ -1,8 +1,6 @@
 defmodule Fantasygame.User do
   use Fantasygame.Web, :model
 
-  alias Fantasygame.{Board, UserBoard}
-
   @derive {Poison.Encoder, only: [:id, :first_name, :last_name, :email]}
 
   schema "users" do

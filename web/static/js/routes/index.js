@@ -5,7 +5,6 @@ import AuthenticatedContainer       from '../containers/authenticated';
 import HomeIndexView                from '../views/home';
 import RegistrationsNew             from '../views/registrations/new';
 import SessionsNew                  from '../views/sessions/new';
-import BoardsShowView               from '../views/boards/show';
 
 export default function configRoutes(store) {
   return (
@@ -15,9 +14,6 @@ export default function configRoutes(store) {
 
       <Route path="/" component={AuthenticatedContainer}>
         <IndexRoute component={HomeIndexView} />
-
-        <Route path="/boards/:id" component={BoardsShowView}>
-        </Route>
       </Route>
     </Route>
   );
