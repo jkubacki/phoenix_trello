@@ -1,4 +1,4 @@
-defmodule PhoenixTrello do
+defmodule Fantasygame do
   use Application
 
   # See http://elixir-lang.org/docs/stable/elixir/Application.html
@@ -8,23 +8,23 @@ defmodule PhoenixTrello do
 
     children = [
       # Start the endpoint when the application starts
-      supervisor(PhoenixTrello.Endpoint, []),
+      supervisor(Fantasygame.Endpoint, []),
       # Start the Ecto repository
-      supervisor(PhoenixTrello.Repo, []),
+      supervisor(Fantasygame.Repo, []),
       # Here you could define other workers and supervisors as children
-      # worker(PhoenixTrello.Worker, [arg1, arg2, arg3]),
+      # worker(Fantasygame.Worker, [arg1, arg2, arg3]),
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: PhoenixTrello.Supervisor]
+    opts = [strategy: :one_for_one, name: Fantasygame.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
   # Tell Phoenix to update the endpoint configuration
   # whenever the application is updated.
   def config_change(changed, _new, removed) do
-    PhoenixTrello.Endpoint.config_change(changed, removed)
+    Fantasygame.Endpoint.config_change(changed, removed)
     :ok
   end
 end

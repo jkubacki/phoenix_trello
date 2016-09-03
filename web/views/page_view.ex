@@ -1,3 +1,3 @@
-defmodule PhoenixTrello.PageView do
-  use PhoenixTrello.Web, :view
+defmodule Fantasygame.PageView do
+  use Fantasygame.Web, :view
 end

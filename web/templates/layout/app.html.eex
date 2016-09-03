@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="ricardo@codeloveandboards.com">
 
-    <title>Phoenix Trello</title>
+    <title>Fantasygame</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/application.css") %>">
   </head>
 

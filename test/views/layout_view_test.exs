@@ -1,3 +1,3 @@
-defmodule PhoenixTrello.LayoutViewTest do
-  use PhoenixTrello.ConnCase, async: true
+defmodule Fantasygame.LayoutViewTest do
+  use Fantasygame.ConnCase, async: true
 end

@@ -1,5 +1,5 @@
-defmodule PhoenixTrello.SessionView do
-  use PhoenixTrello.Web, :view
+defmodule Fantasygame.SessionView do
+  use Fantasygame.Web, :view
 
   def render("show.json", %{jwt: jwt, user: user}) do
     %{

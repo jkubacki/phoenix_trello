@@ -1,5 +1,5 @@
-defmodule PhoenixTrello.PageControllerTest do
-  use PhoenixTrello.ConnCase
+defmodule Fantasygame.PageControllerTest do
+  use Fantasygame.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get conn, "/"

@@ -1,12 +1,12 @@
-defmodule PhoenixTrello.Web do
+defmodule Fantasygame.Web do
   @moduledoc """
   A module that keeps using definitions for controllers,
   views and so on.
 
   This can be used in your application as:
 
-      use PhoenixTrello.Web, :controller
-      use PhoenixTrello.Web, :view
+      use Fantasygame.Web, :controller
+      use Fantasygame.Web, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -30,12 +30,12 @@ defmodule PhoenixTrello.Web do
     quote do
       use Phoenix.Controller
 
-      alias PhoenixTrello.Repo
+      alias Fantasygame.Repo
       import Ecto
       import Ecto.Query, only: [from: 1, from: 2]
 
-      import PhoenixTrello.Router.Helpers
-      import PhoenixTrello.Gettext
+      import Fantasygame.Router.Helpers
+      import Fantasygame.Gettext
     end
   end
 
@@ -49,9 +49,9 @@ defmodule PhoenixTrello.Web do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import PhoenixTrello.Router.Helpers
-      import PhoenixTrello.ErrorHelpers
-      import PhoenixTrello.Gettext
+      import Fantasygame.Router.Helpers
+      import Fantasygame.ErrorHelpers
+      import Fantasygame.Gettext
     end
   end
 
@@ -65,10 +65,10 @@ defmodule PhoenixTrello.Web do
     quote do
       use Phoenix.Channel
 
-      alias PhoenixTrello.Repo
+      alias Fantasygame.Repo
       import Ecto
       import Ecto.Query, only: [from: 1, from: 2]
-      import PhoenixTrello.Gettext
+      import Fantasygame.Gettext
     end
   end
 

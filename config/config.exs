@@ -6,12 +6,12 @@
 use Mix.Config
 
 # Configures the endpoint
-config :phoenix_trello, PhoenixTrello.Endpoint,
+config :fantasygame, Fantasygame.Endpoint,
   url: [host: "localhost"],
   root: Path.dirname(__DIR__),
   secret_key_base: "XcKkMCP/ch11RoXuNCDpOYut1eFrtF7XA0qNipoB0sP1XT0awX84NUfEqYP+WZBl",
   render_errors: [accepts: ~w(html json)],
-  pubsub: [name: PhoenixTrello.PubSub,
+  pubsub: [name: Fantasygame.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
@@ -29,8 +29,8 @@ config :phoenix, :generators,
   binary_id: false
 
 config :guardian, Guardian,
-  issuer: "PhoenixTrello",
+  issuer: "Fantasygame",
   ttl: { 3, :days },
   verify_issuer: true,
-  serializer: PhoenixTrello.GuardianSerializer,
+  serializer: Fantasygame.GuardianSerializer,
   secret_key: "lksjdlkjsdflkjsdf"

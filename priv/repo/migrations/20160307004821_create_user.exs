@@ -1,4 +1,4 @@
-defmodule PhoenixTrello.Repo.Migrations.CreateUser do
+defmodule Fantasygame.Repo.Migrations.CreateUser do
   use Ecto.Migration
 
   def change do

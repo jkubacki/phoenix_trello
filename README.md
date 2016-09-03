@@ -1,4 +1,4 @@
-# PhoenixTrello
+# Fantasygame
 
 To start your Phoenix app:
 

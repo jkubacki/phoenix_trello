@@ -1,11 +1,11 @@
-defmodule PhoenixTrello.Gettext do
+defmodule Fantasygame.Gettext do
   @moduledoc """
   A module providing Internationalization with a gettext-based API.
 
   By using [Gettext](http://hexdocs.pm/gettext),
   your module gains a set of macros for translations, for example:
 
-      import PhoenixTrello.Gettext
+      import Fantasygame.Gettext
 
       # Simple translation
       gettext "Here is the string to translate"
@@ -20,5 +20,5 @@ defmodule PhoenixTrello.Gettext do
 
   See the [Gettext Docs](http://hexdocs.pm/gettext) for detailed usage.
   """
-  use Gettext, otp_app: :phoenix_trello
+  use Gettext, otp_app: :fantasygame
 end

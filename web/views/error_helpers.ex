@@ -1,4 +1,4 @@
-defmodule PhoenixTrello.ErrorHelpers do
+defmodule Fantasygame.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
@@ -26,10 +26,10 @@ defmodule PhoenixTrello.ErrorHelpers do
     #
     #     dngettext "errors", "1 file", "%{count} files", count
     #
-    Gettext.dngettext(PhoenixTrello.Gettext, "errors", msg, msg, opts[:count], opts)
+    Gettext.dngettext(Fantasygame.Gettext, "errors", msg, msg, opts[:count], opts)
   end
 
   def translate_error(msg) do
-    Gettext.dgettext(PhoenixTrello.Gettext, "errors", msg)
+    Gettext.dgettext(Fantasygame.Gettext, "errors", msg)
   end
 end

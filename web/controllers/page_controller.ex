@@ -1,5 +1,5 @@
-defmodule PhoenixTrello.PageController do
-  use PhoenixTrello.Web, :controller
+defmodule Fantasygame.PageController do
+  use Fantasygame.Web, :controller
 
   def index(conn, _params) do
     render conn, "index.html"
