@@ -14,6 +14,8 @@ export default function configRoutes(store) {
 
       <Route path="/" component={AuthenticatedContainer}>
         <IndexRoute component={HomeIndexView} />
+
+        <Route path="/boards/:id" component={BoardsShowView}/>
       </Route>
     </Route>
   );
