@@ -1,5 +1,5 @@
 defmodule PhoenixTrello.Endpoint do
-  use Phoenix.Endpoint, otp_app: :fantasygame
+  use Phoenix.Endpoint, otp_app: :phoenix_trello
 
   socket "/socket", PhoenixTrello.UserSocket
 
@@ -8,7 +8,7 @@ defmodule PhoenixTrello.Endpoint do
   # You should set gzip to true if you are running phoenix.digest
   # when deploying your static files in production.
   plug Plug.Static,
-    at: "/", from: :fantasygame, gzip: false,
+    at: "/", from: :phoenix_trello, gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
   # Code reloading can be explicitly enabled under the
@@ -32,7 +32,7 @@ defmodule PhoenixTrello.Endpoint do
 
   plug Plug.Session,
     store: :cookie,
-    key: "_fantasygame_key",
+    key: "_phoenix_trello_key",
     signing_salt: "GAhAuwUX"
 
   plug PhoenixTrello.Router

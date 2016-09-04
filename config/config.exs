@@ -6,7 +6,7 @@
 use Mix.Config
 
 # Configures the endpoint
-config :fantasygame, PhoenixTrello.Endpoint,
+config :phoenix_trello, PhoenixTrello.Endpoint,
   url: [host: "localhost"],
   root: Path.dirname(__DIR__),
   secret_key_base: "XcKkMCP/ch11RoXuNCDpOYut1eFrtF7XA0qNipoB0sP1XT0awX84NUfEqYP+WZBl",
