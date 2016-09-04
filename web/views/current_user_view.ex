@@ -1,5 +1,5 @@
-defmodule Fantasygame.CurrentUserView do
-  use Fantasygame.Web, :view
+defmodule PhoenixTrello.CurrentUserView do
+  use PhoenixTrello.Web, :view
 
   def render("show.json", %{user: user}) do
     user

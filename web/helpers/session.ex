@@ -1,5 +1,5 @@
-defmodule Fantasygame.Session do
-  alias Fantasygame.{Repo, User}
+defmodule PhoenixTrello.Session do
+  alias PhoenixTrello.{Repo, User}
 
   def authenticate(%{"email" => email, "password" => password}) do
     user = Repo.get_by(User, email: String.downcase(email))

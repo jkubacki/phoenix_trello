@@ -1,11 +1,11 @@
-defmodule Fantasygame.UserSocket do
+defmodule PhoenixTrello.UserSocket do
   use Phoenix.Socket
 
-  alias Fantasygame.{GuardianSerializer}
+  alias PhoenixTrello.{GuardianSerializer}
 
   # Channels
-  channel "users:*", Fantasygame.UserChannel
-  channel "topics:*", Fantasygame.TopicChannel
+  channel "users:*", PhoenixTrello.UserChannel
+  channel "topics:*", PhoenixTrello.TopicChannel
 
   # Transports
   transport :websocket, Phoenix.Transports.WebSocket

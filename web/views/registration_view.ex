@@ -1,5 +1,5 @@
-defmodule Fantasygame.RegistrationView do
-  use Fantasygame.Web, :view
+defmodule PhoenixTrello.RegistrationView do
+  use PhoenixTrello.Web, :view
 
   def render("error.json", %{changeset: changeset}) do
     errors = Enum.map(changeset.errors, fn {field, detail} ->

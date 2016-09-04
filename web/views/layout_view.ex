@@ -1,3 +1,3 @@
-defmodule Fantasygame.LayoutView do
-  use Fantasygame.Web, :view
+defmodule PhoenixTrello.LayoutView do
+  use PhoenixTrello.Web, :view
 end

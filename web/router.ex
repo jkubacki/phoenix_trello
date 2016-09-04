@@ -1,5 +1,5 @@
-defmodule Fantasygame.Router do
-  use Fantasygame.Web, :router
+defmodule PhoenixTrello.Router do
+  use PhoenixTrello.Web, :router
 
   pipeline :api do
     plug :accepts, ["json"]
@@ -7,7 +7,7 @@ defmodule Fantasygame.Router do
     plug Guardian.Plug.LoadResource
   end
 
-  scope "/api", Fantasygame do
+  scope "/api", PhoenixTrello do
     pipe_through :api
 
     scope "/v1" do
@@ -26,7 +26,7 @@ defmodule Fantasygame.Router do
     plug :put_secure_browser_headers
   end
 
-  scope "/", Fantasygame do
+  scope "/", PhoenixTrello do
     pipe_through :browser # Use the default browser stack
 
     get "*path", PageController, :index

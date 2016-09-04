@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
 
-    <title>Fantasygame</title>
+    <title>PhoenixTrello</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/application.css") %>">
   </head>
 

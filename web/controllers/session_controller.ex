@@ -1,10 +1,10 @@
-defmodule Fantasygame.SessionController do
-  use Fantasygame.Web, :controller
+defmodule PhoenixTrello.SessionController do
+  use PhoenixTrello.Web, :controller
 
   plug :scrub_params, "session" when action in [:create]
 
   def create(conn, %{"session" => session_params}) do
-    case Fantasygame.Session.authenticate(session_params) do
+    case PhoenixTrello.Session.authenticate(session_params) do
       {:ok, user} ->
         {:ok, jwt, _full_claims} = user |> Guardian.encode_and_sign(:token)
 
@@ -33,6 +33,6 @@ defmodule Fantasygame.SessionController do
   def unauthenticated(conn, _params) do
     conn
     |> put_status(:forbidden)
-    |> render(Fantasygame.SessionView, "forbidden.json", error: "Not Authenticated")
+    |> render(PhoenixTrello.SessionView, "forbidden.json", error: "Not Authenticated")
   end
 end

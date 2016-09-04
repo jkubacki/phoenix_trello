@@ -5,11 +5,11 @@
 # Inside the script, you can read and write to any of your
 # repositories directly:
 #
-#     Fantasygame.Repo.insert!(%Fantasygame.SomeModel{})
+#     PhoenixTrello.Repo.insert!(%PhoenixTrello.SomeModel{})
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
-alias Fantasygame.{Repo, User}
+alias PhoenixTrello.{Repo, User}
 
 [
   %{

@@ -1,7 +1,7 @@
 use Mix.Config
 
 # Config for webpack
-config :fantasygame, Fantasygame.Endpoint,
+config :fantasygame, PhoenixTrello.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,
@@ -17,7 +17,7 @@ config :fantasygame, Fantasygame.Endpoint,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with brunch.io to recompile .js and .css sources.
-config :fantasygame, Fantasygame.Endpoint,
+config :fantasygame, PhoenixTrello.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,
@@ -25,7 +25,7 @@ config :fantasygame, Fantasygame.Endpoint,
   watchers: []
 
 # Watch static and templates for browser reloading.
-config :fantasygame, Fantasygame.Endpoint,
+config :fantasygame, PhoenixTrello.Endpoint,
   live_reload: [
     patterns: [
       ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
@@ -44,7 +44,7 @@ config :logger, :console, format: "[$level] $message\n"
 config :phoenix, :stacktrace_depth, 20
 
 # Configure your database
-config :fantasygame, Fantasygame.Repo,
+config :fantasygame, PhoenixTrello.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "fantasygame",
   password: "",

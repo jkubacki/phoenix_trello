@@ -60,7 +60,7 @@ export function httpDelete(url) {
 }
 
 export function setDocumentTitle(title) {
-  document.title = `${title} | Fantasygame`;
+  document.title = `${title} | PhoenixTrello`;
 }
 
 export function renderErrorsFor(errors, ref) {

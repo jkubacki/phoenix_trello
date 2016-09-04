@@ -1,4 +1,4 @@
-defmodule Fantasygame.ModelCase do
+defmodule PhoenixTrello.ModelCase do
   @moduledoc """
   This module defines the test case to be used by
   model tests.
@@ -16,18 +16,18 @@ defmodule Fantasygame.ModelCase do
 
   using do
     quote do
-      alias Fantasygame.Repo
+      alias PhoenixTrello.Repo
 
       import Ecto
       import Ecto.Changeset
       import Ecto.Query, only: [from: 1, from: 2]
-      import Fantasygame.ModelCase
+      import PhoenixTrello.ModelCase
     end
   end
 
   setup tags do
     unless tags[:async] do
-      Ecto.Adapters.SQL.restart_test_transaction(Fantasygame.Repo, [])
+      Ecto.Adapters.SQL.restart_test_transaction(PhoenixTrello.Repo, [])
     end
 
     :ok

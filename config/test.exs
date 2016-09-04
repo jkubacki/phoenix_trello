@@ -2,7 +2,7 @@ use Mix.Config
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
-config :fantasygame, Fantasygame.Endpoint,
+config :fantasygame, PhoenixTrello.Endpoint,
   http: [port: 4001],
   server: false
 
@@ -10,7 +10,7 @@ config :fantasygame, Fantasygame.Endpoint,
 config :logger, level: :warn
 
 # Configure your database
-config :fantasygame, Fantasygame.Repo,
+config :fantasygame, PhoenixTrello.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "postgres",

@@ -1,7 +1,7 @@
-defmodule Fantasygame.Endpoint do
+defmodule PhoenixTrello.Endpoint do
   use Phoenix.Endpoint, otp_app: :fantasygame
 
-  socket "/socket", Fantasygame.UserSocket
+  socket "/socket", PhoenixTrello.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #
@@ -35,5 +35,5 @@ defmodule Fantasygame.Endpoint do
     key: "_fantasygame_key",
     signing_salt: "GAhAuwUX"
 
-  plug Fantasygame.Router
+  plug PhoenixTrello.Router
 end

@@ -1,7 +1,7 @@
-defmodule Fantasygame.RegistrationController do
-  use Fantasygame.Web, :controller
+defmodule PhoenixTrello.RegistrationController do
+  use PhoenixTrello.Web, :controller
 
-  alias Fantasygame.{Repo, User}
+  alias PhoenixTrello.{Repo, User}
 
   plug :scrub_params, "user" when action in [:create]
 
@@ -14,7 +14,7 @@ defmodule Fantasygame.RegistrationController do
 
         conn
         |> put_status(:created)
-        |> render(Fantasygame.SessionView, "show.json", jwt: jwt, user: user)
+        |> render(PhoenixTrello.SessionView, "show.json", jwt: jwt, user: user)
 
       {:error, changeset} ->
         conn

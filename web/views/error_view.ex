@@ -1,5 +1,5 @@
-defmodule Fantasygame.ErrorView do
-  use Fantasygame.Web, :view
+defmodule PhoenixTrello.ErrorView do
+  use PhoenixTrello.Web, :view
 
   def render("404.html", _assigns) do
     "Page not found"

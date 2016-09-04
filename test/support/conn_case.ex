@@ -1,4 +1,4 @@
-defmodule Fantasygame.ConnCase do
+defmodule PhoenixTrello.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -20,21 +20,21 @@ defmodule Fantasygame.ConnCase do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
 
-      alias Fantasygame.Repo
+      alias PhoenixTrello.Repo
       import Ecto
       import Ecto.Changeset
       import Ecto.Query, only: [from: 1, from: 2]
 
-      import Fantasygame.Router.Helpers
+      import PhoenixTrello.Router.Helpers
 
       # The default endpoint for testing
-      @endpoint Fantasygame.Endpoint
+      @endpoint PhoenixTrello.Endpoint
     end
   end
 
   setup tags do
     unless tags[:async] do
-      Ecto.Adapters.SQL.restart_test_transaction(Fantasygame.Repo, [])
+      Ecto.Adapters.SQL.restart_test_transaction(PhoenixTrello.Repo, [])
     end
 
     {:ok, conn: Phoenix.ConnTest.conn()}

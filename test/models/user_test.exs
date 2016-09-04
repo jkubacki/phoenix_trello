@@ -1,7 +1,7 @@
-defmodule Fantasygame.UserTest do
-  use Fantasygame.ModelCase
+defmodule PhoenixTrello.UserTest do
+  use PhoenixTrello.ModelCase
 
-  alias Fantasygame.User
+  alias PhoenixTrello.User
 
   @valid_attrs %{email: "some content", encrypted_password: "some content", first_name: "some content", last_name: "some content"}
   @invalid_attrs %{}
