@@ -12,5 +12,6 @@ defmodule PhoenixTrello.BoardChannel do
     socket.assigns.current_user
     |> assoc(:boards)
     |> Repo.get(board_id)
+    |> Repo.preload(:user)
   end
 end
