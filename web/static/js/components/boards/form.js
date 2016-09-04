@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react';
 import Actions              from '../../actions/boards';
-import PageClick            from 'react-page-click';
 import {renderErrorsFor}    from '../../utils';
 
 export default class BoardForm extends React.Component {
@@ -31,7 +30,7 @@ export default class BoardForm extends React.Component {
     const { errors } = this.props;
 
     return (
-      <PageClick onClick={::this._handleCancelClick}>
+      <div onClick={::this._handleCancelClick}>
         <div className="board form">
           <div className="inner">
             <h4>New board</h4>
@@ -42,7 +41,7 @@ export default class BoardForm extends React.Component {
             </form>
           </div>
         </div>
-      </PageClick>
+      </div>
     );
   }
 }
