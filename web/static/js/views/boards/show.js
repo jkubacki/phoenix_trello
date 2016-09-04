@@ -4,7 +4,7 @@ import { connect }          from 'react-redux';
 import Actions              from '../../actions/current_board';
 import Constants            from '../../constants';
 import { setDocumentTitle } from '../../utils';
-import BoardMembers           from '../../components/boards/members';
+// import BoardMembers         from '../../components/boards/members';
 
 
 class BoardsShowView extends React.Component {
@@ -14,7 +14,6 @@ class BoardsShowView extends React.Component {
     if (!socket) {
       return false;
     }
-
     this.props.dispatch(Actions.connectToChannel(socket, this.props.params.id));
   }
 
@@ -43,7 +42,6 @@ class BoardsShowView extends React.Component {
 
   render() {
     const { fetching, name } = this.props.currentBoard;
-
     if (fetching) return (
       <div className="view-container boards show">
         <i className="fa fa-spinner fa-spin"/>
