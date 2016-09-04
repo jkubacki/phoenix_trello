@@ -75,7 +75,7 @@ class HomeIndexView extends React.Component {
   _renderOtherBoards() {
     const { invitedBoards } = this.props;
 
-    if (invitedBoards.length === 0) return false;
+    if (invitedBoards === undefined || invitedBoards.length === 0) return false;
 
     return (
       <section>
