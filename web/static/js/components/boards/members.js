@@ -1,7 +1,6 @@
 import React, {PropTypes}       from 'react';
 import ReactGravatar            from 'react-gravatar';
 import classnames               from 'classnames';
-import PageClick                from 'react-page-click';
 import Actions                  from '../../actions/current_board';
 
 export default class BoardMembers extends React.Component {
@@ -37,18 +36,16 @@ export default class BoardMembers extends React.Component {
     if (!this.props.show) return false;
 
     return (
-      <PageClick onClick={::this._handleCancelClick}>
-        <ul className="drop-down active">
-          <li>
-            <form onSubmit={::this._handleSubmit}>
-              <h4>Add new members</h4>
-              {::this._renderError()}
-              <input ref="email" type="email" required={true} placeholder="Member email"/>
-              <button type="submit">Add member</button> or <a onClick={::this._handleCancelClick} href="#">cancel</a>
-            </form>
-          </li>
-        </ul>
-      </PageClick>
+      <ul className="drop-down active">
+        <li>
+          <form onSubmit={::this._handleSubmit}>
+            <h4>Add new members</h4>
+            {::this._renderError()}
+            <input ref="email" type="email" required={true} placeholder="Member email"/>
+            <button type="submit">Add member</button> or <a onClick={::this._handleCancelClick} href="#">cancel</a>
+          </form>
+        </li>
+      </ul>
     );
   }
 
