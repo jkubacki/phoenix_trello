@@ -12,6 +12,10 @@ defmodule PhoenixTrello.BoardChannel.Monitor do
    GenServer.call(__MODULE__, {:user_joined, board, member})
   end
 
+  def user_left(board, member) do
+    GenServer.call(__MODULE__, {:user_left, board, member})
+  end
+
   #####
   # Server callbacks
 
@@ -29,4 +33,15 @@ defmodule PhoenixTrello.BoardChannel.Monitor do
         {:reply, Map.get(state, board), state}
     end
   end
+
+  def handle_call({:user_left, board, user}, _from, state) do
+      new_users = state
+        |> Map.get(board)
+        |> List.delete(user)
+
+      state = state
+        |> Map.update!(board, fn(_) -> new_users end)
+
+      {:reply, new_users, state}
+    end
 end
