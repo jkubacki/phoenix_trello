@@ -8,14 +8,14 @@ defmodule PhoenixTrello.BoardChannel.Monitor do
    GenServer.start_link(__MODULE__, initial_state, name: __MODULE__)
   end
 
-  def member_joined(board, member) do
-   GenServer.call(__MODULE__, {:member_joined, board, member})
+  def user_joined(board, member) do
+   GenServer.call(__MODULE__, {:user_joined, board, member})
   end
 
   #####
   # Server callbacks
 
-  def handle_call({:member_joined, board, member}, _from, state) do
+  def handle_call({:user_joined, board, member}, _from, state) do
     state = case Map.get(state, board) do
       nil ->
         state = state
