@@ -21,6 +21,15 @@ defmodule PhoenixTrello.BoardChannel do
     {:noreply, socket}
   end
 
+  def terminate(_reason, socket) do
+    board_id = socket.assigns.board.id
+    user_id = socket.assigns.current_user.id
+
+    broadcast! socket, "user:left", %{users: Monitor.user_left(board_id, user_id)}
+
+    :ok
+  end
+
   defp get_current_board(socket, board_id) do
     socket.assigns.current_user
     |> assoc(:boards)
