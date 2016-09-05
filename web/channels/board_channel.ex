@@ -8,9 +8,9 @@ defmodule PhoenixTrello.BoardChannel do
     current_user = socket.assigns.current_user
     board = get_current_board(socket, board_id)
 
-    connected_users = Monitor.user_joined(board_id, current_user.id)
+    Monitor.create(board_id)
 
-    send(self, {:after_join, connected_users})
+    send(self, {:after_join, Monitor.user_joined(board_id, current_user.id)})
 
     {:ok, %{board: board}, assign(socket, :board, board)}
   end
