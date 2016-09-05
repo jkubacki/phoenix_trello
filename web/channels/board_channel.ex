@@ -13,5 +13,6 @@ defmodule PhoenixTrello.BoardChannel do
     |> assoc(:boards)
     |> Repo.get(board_id)
     |> Repo.preload(:user)
+    |> Repo.preload(:members)
   end
 end

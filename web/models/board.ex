@@ -3,7 +3,7 @@ defmodule PhoenixTrello.Board do
 
   alias __MODULE__
 
-  @derive {Poison.Encoder, only: [:id, :name, :user]}
+  @derive {Poison.Encoder, only: [:id, :name, :user, :members]}
 
   schema "boards" do
     field :name, :string
@@ -30,6 +30,6 @@ defmodule PhoenixTrello.Board do
   end
 
   def preload_all(query) do
-    from b in query, preload: [:user]
+    from b in query, preload: [:user, :members]
   end
 end
