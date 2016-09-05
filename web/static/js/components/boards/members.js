@@ -5,7 +5,6 @@ import Actions                  from '../../actions/current_board';
 
 export default class BoardMembers extends React.Component {
   _renderUsers() {
-    console.log(this.props);
     return this.props.members.map((member) => {
       const index = this.props.connectedUsers.findIndex((cu) => {
         return cu === member.id;

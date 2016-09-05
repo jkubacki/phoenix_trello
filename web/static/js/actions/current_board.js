@@ -25,6 +25,19 @@ const Actions = {
           users: msg.users,
         });
       });
+
+      channel.on('user:left', (msg) => {
+        dispatch({
+          type: Constants.CURRENT_BOARD_CONNECTED_USERS,
+          users: msg.users,
+        });
+      });
+    };
+  },
+
+  leaveChannel: (channel) => {
+    return dispatch => {
+      channel.leave();
     };
   },
 };
