@@ -4,7 +4,7 @@ import { connect }          from 'react-redux';
 import Actions              from '../../actions/current_board';
 import Constants            from '../../constants';
 import { setDocumentTitle } from '../../utils';
-// import BoardMembers         from '../../components/boards/members';
+import BoardMembers         from '../../components/boards/members';
 
 
 class BoardsShowView extends React.Component {
@@ -57,7 +57,7 @@ class BoardsShowView extends React.Component {
         <div className="canvas-wrapper">
           <div className="canvas">
             <div className="lists-wrapper">
-              {::this._renderAddNewList()}
+              {/*{::this._renderAddNewList()}*/}
             </div>
           </div>
         </div>
