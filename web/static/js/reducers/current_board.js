@@ -3,6 +3,7 @@ import Constants  from '../constants';
 const initialState = {
   channel: null,
   fetching: true,
+  connectedUsers: [],
 };
 
 export default function reducer(state = initialState, action = {}) {
@@ -15,6 +16,9 @@ export default function reducer(state = initialState, action = {}) {
 
     case Constants.CURRENT_BOARD_CONNECTED_TO_CHANNEL:
       return { ...state, channel: action.channel };
+
+    case Constants.CURRENT_BOARD_CONNECTED_USERS:
+      return { ...state, connectedUsers: action.users };
 
     default:
       return state;
