@@ -47,7 +47,7 @@ class SessionsNew extends React.Component {
                 id="user_email"
                 placeholder="Email"
                 required="true"
-                defaultValue="john@phoenix-trello.com"/>
+                defaultValue="kuba@example.com"/>
             </div>
             <div className="field">
               <input
@@ -56,7 +56,7 @@ class SessionsNew extends React.Component {
                 id="user_password"
                 placeholder="Password"
                 required="true"
-                defaultValue="12345678"/>
+                defaultValue="password"/>
             </div>
             <button type="submit">Sign in</button>
           </form>

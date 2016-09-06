@@ -13,10 +13,10 @@ alias PhoenixTrello.{Repo, User}
 
 [
   %{
-    first_name: "John",
-    last_name: "Doe",
-    email: "john@phoenix-trello.com",
-    password: "12345678"
+    first_name: "Kuba",
+    last_name: "Qba",
+    email: "kuba@example.com",
+    password: "password"
   },
 ]
 |> Enum.map(&User.changeset(%User{}, &1))
