@@ -2,14 +2,13 @@ defmodule PhoenixTrello.Board do
   use PhoenixTrello.Web, :model
 
   alias __MODULE__
-
-  @derive {Poison.Encoder, only: [:id, :name, :user, :members]}
+  alias PhoenixTrello.{Repo, UserBoard, User}
 
   schema "boards" do
     field :name, :string
 
-    belongs_to :user, PhoenixTrello.User
-    has_many :user_boards, PhoenixTrello.UserBoard
+    belongs_to :user, User
+    has_many :user_boards, UserBoard
     has_many :members, through: [:user_boards, :user]
 
     timestamps
@@ -31,5 +30,13 @@ defmodule PhoenixTrello.Board do
 
   def preload_all(query) do
     from b in query, preload: [:user, :members]
+  end
+end
+
+defimpl Poison.Encoder, for: PhoenixTrello.Board do
+  def encode(model, options) do
+    model
+    |> Map.take([:id, :name, :user, :members])
+    |> Poison.Encoder.encode(options)
   end
 end
