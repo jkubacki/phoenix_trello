@@ -28,6 +28,8 @@ export default function reducer(state = initialState, action = {}) {
 
       return { ...state, lists: lists, showForm: false };
 
+    case Constants.CURRENT_BOARD_SHOW_FORM:
+      return { ...state, showForm: action.show };
 
     default:
       return state;

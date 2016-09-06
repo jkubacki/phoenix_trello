@@ -5,6 +5,7 @@ import Actions              from '../../actions/current_board';
 import Constants            from '../../constants';
 import { setDocumentTitle } from '../../utils';
 import BoardMembers         from '../../components/boards/members';
+import ListForm             from '../../components/lists/form';
 
 
 class BoardsShowView extends React.Component {
@@ -72,6 +73,18 @@ class BoardsShowView extends React.Component {
       </div>
     );
   }
+
+  _handleAddNewClick() {
+    const { dispatch } = this.props;
+
+    dispatch(Actions.showForm(true));
+  }
+
+  _handleCancelClick() {
+    this.props.dispatch(Actions.showForm(false));
+  }
+
+
   render() {
     const { fetching, name } = this.props.currentBoard;
     if (fetching) return (
