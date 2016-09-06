@@ -56,6 +56,15 @@ const Actions = {
       channel.leave();
     };
   },
+
+  showCardForm: (listId) => {
+    return dispatch => {
+      dispatch({
+        type: Constants.CURRENT_BOARD_SHOW_CARD_FORM_FOR_LIST,
+        listId: listId,
+      });
+    };
+  },
 };
 
 export default Actions;

@@ -4,6 +4,7 @@ const initialState = {
   channel: null,
   fetching: true,
   connectedUsers: [],
+  addingNewCardInListId: null,
 };
 
 export default function reducer(state = initialState, action = {}) {
@@ -30,6 +31,9 @@ export default function reducer(state = initialState, action = {}) {
 
     case Constants.CURRENT_BOARD_SHOW_FORM:
       return { ...state, showForm: action.show };
+
+    case Constants.CURRENT_BOARD_SHOW_CARD_FORM_FOR_LIST:
+      return { ...state, addingNewCardInListId: action.listId };
 
     default:
       return state;
