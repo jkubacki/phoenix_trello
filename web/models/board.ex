@@ -2,7 +2,7 @@ defmodule PhoenixTrello.Board do
   use PhoenixTrello.Web, :model
 
   alias __MODULE__
-  alias PhoenixTrello.{Repo, UserBoard, User, List}
+  alias PhoenixTrello.{Repo, UserBoard, User, List, Card}
 
   schema "boards" do
     field :name, :string
@@ -30,7 +30,10 @@ defmodule PhoenixTrello.Board do
   end
 
   def preload_all(query) do
-    from b in query, preload: [:user, :members, :lists]
+    cards_query = from c in Card, preload: [:members]
+    lists_query = from l in List, preload: [cards: ^cards_query]
+
+    from b in query, preload: [:user, :members, lists: ^lists_query]
   end
 end
 
