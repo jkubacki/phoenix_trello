@@ -1,7 +1,7 @@
 import React, {PropTypes}       from 'react';
 import Actions                  from '../../actions/current_board';
 import CardForm                 from '../../components/cards/form';
-// import Card                     from '../../components/cards/card';
+import Card                     from '../../components/cards/card';
 
 export default class ListCard extends React.Component {
   _renderCards() {
@@ -9,7 +9,11 @@ export default class ListCard extends React.Component {
 
     return cards.map((card) => {
       return (
-        <div>Card</div>
+        <Card
+          key={card.id}
+          dispatch={dispatch}
+          boardId={boardId}
+          {...card} />
       );
     });
   }
