@@ -4,6 +4,15 @@ import CardForm                 from '../../components/cards/form';
 // import Card                     from '../../components/cards/card';
 
 export default class ListCard extends React.Component {
+  _renderCards() {
+    const { cards, dispatch, boardId } = this.props;
+
+    return cards.map((card) => {
+      return (
+        <div>Card</div>
+      );
+    });
+  }
 
   _renderForm() {
     const { isAddingNewCard } = this.props;
@@ -55,7 +64,7 @@ export default class ListCard extends React.Component {
             <h4>{this.props.name}</h4>
           </header>
           <div className="cards-wrapper">
-            {/* {::this._renderCards()} */}
+            {::this._renderCards()}
           </div>
           <footer>
             {::this._renderForm()}
