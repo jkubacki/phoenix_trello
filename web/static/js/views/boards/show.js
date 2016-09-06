@@ -39,6 +39,25 @@ class BoardsShowView extends React.Component {
     );
   }
 
+  _renderLists() {
+    const { lists, channel, editingListId, id, addingNewCardInListId } = this.props.currentBoard;
+
+    return lists.map((list) => {
+      return (
+        <ListCard
+          key={list.id}
+          boardId={id}
+          dispatch={this.props.dispatch}
+          channel={channel}
+          isEditing={editingListId === list.id}
+          onDropCard={::this._handleDropCard}
+          onDropCardWhenEmpty={::this._handleDropCardWhenEmpty}
+          onDrop={::this._handleDropList}
+          isAddingNewCard={addingNewCardInListId === list.id}
+          {...list} />
+      );
+    });
+  }
 
   render() {
     const { fetching, name } = this.props.currentBoard;
@@ -57,6 +76,7 @@ class BoardsShowView extends React.Component {
         <div className="canvas-wrapper">
           <div className="canvas">
             <div className="lists-wrapper">
+              {::this._renderLists()}
               {/*{::this._renderAddNewList()}*/}
             </div>
           </div>
