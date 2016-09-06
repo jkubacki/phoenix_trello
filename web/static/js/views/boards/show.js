@@ -49,6 +49,29 @@ class BoardsShowView extends React.Component {
     });
   }
 
+  _renderAddNewList() {
+    const { dispatch, formErrors, currentBoard } = this.props;
+
+    if (!currentBoard.showForm) return this._renderAddButton();
+
+    return (
+      <ListForm
+        dispatch={dispatch}
+        errors={formErrors}
+        channel={currentBoard.channel}
+        onCancelClick={::this._handleCancelClick} />
+    );
+  }
+
+  _renderAddButton() {
+    return (
+      <div className="list add-new" onClick={::this._handleAddNewClick}>
+        <div className="inner">
+          Add new list...
+        </div>
+      </div>
+    );
+  }
   render() {
     const { fetching, name } = this.props.currentBoard;
     if (fetching) return (
@@ -67,7 +90,7 @@ class BoardsShowView extends React.Component {
           <div className="canvas">
             <div className="lists-wrapper">
               {::this._renderLists()}
-              {/*{::this._renderAddNewList()}*/}
+              {::this._renderAddNewList()}
             </div>
           </div>
         </div>
