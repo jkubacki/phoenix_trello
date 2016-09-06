@@ -44,17 +44,7 @@ class BoardsShowView extends React.Component {
 
     return lists.map((list) => {
       return (
-        <ListCard
-          key={list.id}
-          boardId={id}
-          dispatch={this.props.dispatch}
-          channel={channel}
-          isEditing={editingListId === list.id}
-          onDropCard={::this._handleDropCard}
-          onDropCardWhenEmpty={::this._handleDropCardWhenEmpty}
-          onDrop={::this._handleDropList}
-          isAddingNewCard={addingNewCardInListId === list.id}
-          {...list} />
+        <div>ListCard</div>
       );
     });
   }
