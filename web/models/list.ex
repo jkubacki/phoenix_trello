@@ -2,13 +2,15 @@
 defmodule PhoenixTrello.List do
   use PhoenixTrello.Web, :model
 
-  alias PhoenixTrello.{Board}
+  alias PhoenixTrello.{Board, Card}
 
-  @derive {Poison.Encoder, only: [:id, :board_id, :name]}
+  @derive {Poison.Encoder, only: [:id, :board_id, :name, :cards]}
 
   schema "lists" do
     field :name, :string
     belongs_to :board, Board
+
+     has_many :cards, Card
 
     timestamps
   end
