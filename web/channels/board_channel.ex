@@ -17,7 +17,6 @@ defmodule PhoenixTrello.BoardChannel do
 
   def handle_info({:after_join, connected_users}, socket) do
     broadcast! socket, "user:joined", %{users: connected_users}
-
     {:noreply, socket}
   end
 
@@ -33,8 +32,9 @@ defmodule PhoenixTrello.BoardChannel do
   defp get_current_board(socket, board_id) do
     socket.assigns.current_user
     |> assoc(:boards)
+    |> Board.preload_all
     |> Repo.get(board_id)
-    |> Repo.preload(:user)
-    |> Repo.preload(:members)
   end
+
+  defp get_current_board(socket), do: get_current_board(socket, socket.assigns.board.id)
 end
