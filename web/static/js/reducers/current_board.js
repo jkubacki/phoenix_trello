@@ -7,6 +7,8 @@ const initialState = {
 };
 
 export default function reducer(state = initialState, action = {}) {
+  let lists;
+
   switch (action.type) {
     case Constants.CURRENT_BOARD_FETHING:
       return { ...state, fetching: true };
@@ -19,6 +21,13 @@ export default function reducer(state = initialState, action = {}) {
 
     case Constants.CURRENT_BOARD_CONNECTED_USERS:
       return { ...state, connectedUsers: action.users };
+
+    case Constants.CURRENT_BOARD_LIST_CREATED:
+      lists = state.lists;
+      lists.push(action.list);
+
+      return { ...state, lists: lists, showForm: false };
+
 
     default:
       return state;
