@@ -2,12 +2,13 @@ defmodule PhoenixTrello.Board do
   use PhoenixTrello.Web, :model
 
   alias __MODULE__
-  alias PhoenixTrello.{Repo, UserBoard, User}
+  alias PhoenixTrello.{Repo, UserBoard, User, List}
 
   schema "boards" do
     field :name, :string
 
     belongs_to :user, User
+    has_many :lists, List
     has_many :user_boards, UserBoard
     has_many :members, through: [:user_boards, :user]
 
@@ -29,14 +30,14 @@ defmodule PhoenixTrello.Board do
   end
 
   def preload_all(query) do
-    from b in query, preload: [:user, :members]
+    from b in query, preload: [:user, :members, :lists]
   end
 end
 
 defimpl Poison.Encoder, for: PhoenixTrello.Board do
   def encode(model, options) do
     model
-    |> Map.take([:id, :name, :user, :members])
+    |> Map.take([:id, :name, :user, :members, :lists])
     |> Poison.Encoder.encode(options)
   end
 end
