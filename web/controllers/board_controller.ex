@@ -23,6 +23,7 @@ defmodule PhoenixTrello.BoardController do
       |> build_assoc(:owned_boards)
       |> Repo.preload(:user)
       |> Repo.preload(:members)
+      |> Repo.preload(:lists)
       |> Board.changeset(board_params)
 
     if changeset.valid? do
