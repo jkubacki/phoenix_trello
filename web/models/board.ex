@@ -9,6 +9,7 @@ defmodule PhoenixTrello.Board do
 
     belongs_to :user, User
     has_many :lists, List
+    has_many :cards, through: [:lists, :cards]
     has_many :user_boards, UserBoard
     has_many :members, through: [:user_boards, :user]
 
@@ -30,7 +31,7 @@ defmodule PhoenixTrello.Board do
   end
 
   def preload_all(query) do
-    cards_query = from c in Card, preload: [:members]
+    cards_query = from c in Card
     lists_query = from l in List, preload: [cards: ^cards_query]
 
     from b in query, preload: [:user, :members, lists: ^lists_query]
