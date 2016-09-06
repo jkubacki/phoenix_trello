@@ -6,6 +6,7 @@ import Constants            from '../../constants';
 import { setDocumentTitle } from '../../utils';
 import BoardMembers         from '../../components/boards/members';
 import ListForm             from '../../components/lists/form';
+import ListCard             from '../../components/lists/card';
 
 
 class BoardsShowView extends React.Component {
@@ -45,7 +46,14 @@ class BoardsShowView extends React.Component {
 
     return lists.map((list) => {
       return (
-        <div>ListCard</div>
+        <ListCard
+          key={list.id}
+          boardId={id}
+          dispatch={this.props.dispatch}
+          channel={channel}
+          isEditing={editingListId === list.id}
+          isAddingNewCard={addingNewCardInListId === list.id}
+          {...list} />
       );
     });
   }
