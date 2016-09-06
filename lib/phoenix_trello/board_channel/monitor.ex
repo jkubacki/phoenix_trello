@@ -53,7 +53,7 @@ defmodule PhoenixTrello.BoardChannel.Monitor do
   end
 
   defp ref(board_id) do
-    {:global, {:board, board_id}}
+    {:global, {:board, "#{board_id}"}}
   end
 
   defp try_call(board_id, call_function) do
